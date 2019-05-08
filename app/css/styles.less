@@ -8,6 +8,33 @@
 @desktop-max: 1260px;
 
 body {
+  .testic {
+    span {
+      position: relative;
+    }
+    span:before {
+      //position: absolute;
+      top: 1em;
+      content: attr(data-range-min);
+    }
+    span:after {
+      //position: absolute;
+      top: 1em;
+      right: 0em;
+      content: "Выбранное значение: " attr(data-range-max);
+    }
+    input[type="range"]:before {
+      margin-top: 20px;
+      color: @link-color-hover;
+      content: attr(min) " ";
+    }
+    input[type="range"]:after {
+      color: @link-color-hover;
+      content: " " attr(max);
+    }
+  }
+
+
   margin: 0 auto;
   max-width: 1260px;
   .clear-fix {
